@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETOX — Meu Treino</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">PROJETOX</h1>
+        <p class="saudacao">Seu acompanhamento de treino 💪</p>
+    </div>
+
+    <div class="abas">
+        <button class="aba ativa" data-aba="treino">Treino</button>
+        <button class="aba" data-aba="metas">Metas</button>
+        <button class="aba" data-aba="config">Configurações</button>
+    </div>
+
+    <!-- ABA TREINO -->
+    <div id="aba-treino" class="aba-conteudo ativa">
+        <div class="dias-semana" id="diasSemana"></div>
+        
+        <div class="cronometro-card">
+            <h3><i class="fas fa-clock"></i> Descanso entre séries</h3>
+            <div class="cronometro" id="cronometro">01:30</div>
+            <div class="cronometro-botoes">
+                <button id="btnReset" class="btn-secundario"><i class="fas fa-redo"></i></button>
+                <button id="btnIniciar" class="btn-principal"><i class="fas fa-play"></i> Iniciar</button>
+            </div>
+        </div>
+
+        <div class="exercicios-section">
+            <button id="btnAdicionarExercicio" class="btn-adicionar">
+                <i class="fas fa-plus"></i> Adicionar Exercício
+            </button>
+            <div id="listaExercicios" class="lista-exercicios"></div>
+        </div>
+    </div>
+
+    <!-- ABA METAS -->
+    <div id="aba-metas" class="aba-conteudo">
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-chart-line"></i> Meta de Peso</h3>
+            <div class="peso-grid">
+                <div class="peso-item">
+                    <label>Peso inicial (kg)</label>
+                    <input type="number" step="0.1" id="pesoInicial" placeholder="75.0">
+                </div>
+                <div class="peso-item">
+                    <label>Peso alvo (kg)</label>
+                    <input type="number" step="0.1" id="pesoAlvo" placeholder="70.0">
+                </div>
+                <div class="peso-item">
+                    <label>Prazo (dias)</label>
+                    <input type="number" id="prazoDias" placeholder="30">
+                </div>
+            </div>
+            <div class="botoes-meta">
+                <button id="btnSalvarMeta" class="btn-principal">Salvar Meta</button>
+                <button id="btnResetMeta" class="btn-secundario">Resetar</button>
+            </div>
+        </div>
+
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-weight"></i> Registrar Peso Hoje</h3>
+            <div class="peso-item">
+                <label>Peso atual (kg)</label>
+                <input type="number" step="0.1" id="pesoHoje" placeholder="73.5">
+            </div>
+            <button id="btnRegistrarPeso" class="btn-principal">Registrar</button>
+        </div>
+
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-chart-bar"></i> Seu Progresso</h3>
+            <div id="progressoMeta"></div>
+        </div>
+
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-history"></i> Histórico de Peso</h3>
+            <div id="listaHistoricoPeso"></div>
+        </div>
+    </div>
+
+    <!-- ABA CONFIGURAÇÕES -->
+    <div id="aba-config" class="aba-conteudo">
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-user-cog"></i> Meus Dados</h3>
+            <div class="peso-grid">
+                <div class="peso-item">
+                    <label>Peso (kg)</label>
+                    <input type="number" step="0.1" id="calcPeso" placeholder="75.0">
+                </div>
+                <div class="peso-item">
+                    <label>Altura (cm)</label>
+                    <input type="number" id="calcAltura" placeholder="175">
+                </div>
+                <div class="peso-item">
+                    <label>Idade</label>
+                    <input type="number" id="calcIdade" placeholder="25">
+                </div>
+                <div class="peso-item">
+                    <label>Sexo</label>
+                    <select id="calcSexo">
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                    </select>
+                </div>
+                <div class="peso-item">
+                    <label>Nível de atividade</label>
+                    <select id="calcAtividade">
+                        <option value="1.2">Sedentário</option>
+                        <option value="1.375">Leve</option>
+                        <option value="1.55">Moderado</option>
+                        <option value="1.725">Intenso</option>
+                        <option value="1.9">Muito intenso</option>
+                    </select>
+                </div>
+            </div>
+            <button id="btnCalcular" class="btn-principal">Calcular</button>
+            
+            <div class="resultados" id="resultados" style="display:none; margin-top:20px;">
+                <p><strong>TMB:</strong> <span id="resultadoTMB"></span></p>
+                <p><strong>Gasto diário:</strong> <span id="resultadoGasto"></span></p>
+                <p><strong>Água por dia:</strong> <span id="resultadoAgua"></span></p>
+            </div>
+        </div>
+
+        <div class="peso-card">
+            <h3 class="peso-titulo"><i class="fas fa-calendar-check"></i> Dias de Treino</h3>
+            <div id="diasTreinoCheckboxes" class="dias-checkboxes"></div>
+            <button id="btnSalvarDias" class="btn-principal">Salvar Dias</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

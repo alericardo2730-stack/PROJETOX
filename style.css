@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    color: #4cc9f0;
+    margin-bottom: 5px;
+}
+
+.saudacao {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.abas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.aba {
+    padding: 12px 25px;
+    background: #1f2937;
+    border: none;
+    color: #aaa;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.aba.ativa {
+    background: #4cc9f0;
+    color: #000;
+    font-weight: 600;
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo.ativa {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.dia-btn {
+    padding: 12px 8px;
+    background: #1f2937;
+    border: none;
+    color: #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.dia-btn.ativa {
+    background: #4cc9f0;
+    color: #000;
+}
+
+.cronometro-card {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cronometro-card h3 {
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.cronometro {
+    font-size: 64px;
+    font-weight: bold;
+    color: #4cc9f0;
+    font-family: monospace;
+    margin-bottom: 20px;
+}
+
+.cronometro-botoes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-principal {
+    padding: 12px 24px;
+    background: #4cc9f0;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform 0.2s;
+}
+
+.btn-principal:hover {
+    transform: scale(1.05);
+}
+
+.btn-secundario {
+    padding: 12px 20px;
+    background: #374151;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-adicionar {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: 2px dashed #4cc9f0;
+    color: #4cc9f0;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+}
+
+.btn-adicionar:hover {
+    background: #4cc9f0;
+    color: #000;
+}
+
+.lista-exercicios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exercicio-card {
+    background: #1f2937;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.exercicio-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.exercicio-cabecalho h4 {
+    font-size: 17px;
+    color: #fff;
+}
+
+.btn-excluir {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.exercicio-info {
+    display: flex;
+    gap: 20px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.vazio {
+    text-align: center;
+    padding: 50px 20px;
+    color: #6b7280;
+}
+
+.vazio i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.peso-card {
+    background: #1f2937;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.peso-titulo {
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #4cc9f0;
+}
+
+.peso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.peso-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.peso-item label {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.peso-item input,
+.peso-item select {
+    padding: 10px 12px;
+    background: #374151;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.botoes-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.meta-info p {
+    padding: 6px 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.barra-progresso-container {
+    height: 30px;
+    background: #374151;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.barra-progresso {
+    height: 100%;
+    background: linear-gradient(90deg, #4cc9f0, #22d3ee);
+    text-align: center;
+    line-height: 30px;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+    transition: width 0.5s ease;
+}
+
+.status-meta {
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.status-meta.sucesso {
+    background: #065f46;
+    color: #a7f3d0;
+}
+
+.status-meta.progresso {
+    background: #1e40af;
+    color: #bfdbfe;
+}
+
+.status-meta.alerta {
+    background: #7c2d12;
+    color: #fed7aa;
+}
+
+.sem-meta {
+    text-align: center;
+    color: #6b7280;
+    padding: 20px;
+}
+
+.historico-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #374151;
+}
+
+.vazio-texto {
+    color: #6b7280;
+    text-align: center;
+    padding: 20px;
+}
+
+.dias-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.dia-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.resultados p {
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+.resultados strong {
+    color: #4cc9f0;
+}
+
+@media (max-width: 600px) {
+    .dias-semana, .dias-checkboxes {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 11px;
+    }
+}
